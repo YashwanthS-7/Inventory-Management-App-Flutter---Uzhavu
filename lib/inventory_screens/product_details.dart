@@ -11,25 +11,32 @@ class ProductInfoScreen extends StatefulWidget {
   final int priceOfUnit;
 
   //get the data passed from the previous screen
-  const ProductInfoScreen({Key? key, required this.itemName, required this.itemDesc, required this.noOfUnits, required this.priceOfUnit,required this.documentID }) : super(key: key);
+  const ProductInfoScreen(
+      {Key? key,
+      required this.itemName,
+      required this.itemDesc,
+      required this.noOfUnits,
+      required this.priceOfUnit,
+      required this.documentID})
+      : super(key: key);
 
   @override
   State<ProductInfoScreen> createState() => _ProductInfoScreenState();
 }
 
 class _ProductInfoScreenState extends State<ProductInfoScreen> {
-
-
   //document IDs
   List<String> docIDs = [];
-  
+
   //get docIDs
   Future getDocId() async {
-    await FirebaseFirestore.instance.collection('inventory').get().then((
-        snapshot) => snapshot.docs.forEach((document) {
-          print(document.reference);
-          docIDs.add(document.reference.id);
-    }));
+    await FirebaseFirestore.instance
+        .collection('inventory')
+        .get()
+        .then((snapshot) => snapshot.docs.forEach((document) {
+              print(document.reference);
+              docIDs.add(document.reference.id);
+            }));
   }
 
   @override
@@ -42,15 +49,23 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Product Details", style: GoogleFonts.mulish(
-            fontSize: 20, fontWeight: FontWeight.w400, letterSpacing: 0.15, color: Colors.white),),
+        title: Text(
+          "Product Details",
+          style: GoogleFonts.mulish(
+              fontSize: 20,
+              fontWeight: FontWeight.w400,
+              letterSpacing: 0.15,
+              color: Colors.white),
+        ),
         backgroundColor: lightAppTheme.primaryColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back,),
-          color: Colors.white,
+          icon: Icon(
+            Icons.arrow_back,
+          ),
+          color: Color.fromARGB(255, 72, 255, 0),
         ),
       ),
       body: Container(
@@ -70,7 +85,10 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: Text("Category", style: lightAppTheme.textTheme.labelLarge,),
+                      child: Text(
+                        "Category",
+                        style: lightAppTheme.textTheme.labelLarge,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
@@ -93,15 +111,19 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 5.0),
-              child: Text("Product Description", style: lightAppTheme.textTheme.titleLarge,),
+              child: Text(
+                "Product Description",
+                style: lightAppTheme.textTheme.titleLarge,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 5.0),
-              child: Text(widget.itemDesc,
-              textAlign: TextAlign.justify,
-              style: lightAppTheme.textTheme.labelLarge,
-              maxLines: 10,
-              softWrap: true,
+              child: Text(
+                widget.itemDesc,
+                textAlign: TextAlign.justify,
+                style: lightAppTheme.textTheme.labelLarge,
+                maxLines: 10,
+                softWrap: true,
               ),
             ),
             Padding(
@@ -109,21 +131,33 @@ class _ProductInfoScreenState extends State<ProductInfoScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Product ID:  ", style: lightAppTheme.textTheme.labelLarge,),
-                  Text(widget.documentID, style: lightAppTheme.textTheme.labelLarge,),
+                  Text(
+                    "Product ID:  ",
+                    style: lightAppTheme.textTheme.labelLarge,
+                  ),
+                  Text(
+                    widget.documentID,
+                    style: lightAppTheme.textTheme.labelLarge,
+                  ),
                 ],
               ),
             ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 2.5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text("Price:  ", style: lightAppTheme.textTheme.labelLarge,),
-              Text(widget.priceOfUnit.toString(), style: lightAppTheme.textTheme.labelLarge,),
-            ],
-          ),
-        )
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 2.5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Price:  ",
+                    style: lightAppTheme.textTheme.labelLarge,
+                  ),
+                  Text(
+                    widget.priceOfUnit.toString(),
+                    style: lightAppTheme.textTheme.labelLarge,
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

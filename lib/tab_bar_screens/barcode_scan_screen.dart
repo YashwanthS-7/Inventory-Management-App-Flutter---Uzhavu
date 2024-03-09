@@ -16,12 +16,15 @@ class BarcodeScreen extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Text("Scan QR code", style: lightAppTheme.textTheme.headlineMedium,),
+              child: Text(
+                "Scan QR code",
+                style: lightAppTheme.textTheme.headlineMedium,
+              ),
             ),
             Container(
               height: 150,
               width: 150,
-              color: Colors.blue,
+              color: Color.fromARGB(255, 81, 255, 0),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
@@ -29,17 +32,23 @@ class BarcodeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Can't scan barcode? ", style: lightAppTheme.textTheme.bodyLarge,),
-                 /* Padding(padding: EdgeInsets.symmetric(horizontal: 5)),*/
+                  Text(
+                    "Can't scan barcode? ",
+                    style: lightAppTheme.textTheme.bodyLarge,
+                  ),
+                  /* Padding(padding: EdgeInsets.symmetric(horizontal: 5)),*/
                   TextButton(
-                      onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (_)=> ManualEntryScreen()));
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => ManualEntryScreen()));
                       },
-                      child: Text("Click here", style: lightAppTheme.textTheme.bodyLarge,))
+                      child: Text(
+                        "Click here",
+                        style: lightAppTheme.textTheme.bodyLarge,
+                      ))
                 ],
               ),
             )
-        
           ],
         ),
       ),

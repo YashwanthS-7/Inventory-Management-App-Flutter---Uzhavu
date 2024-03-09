@@ -18,28 +18,29 @@ class IntroPage1 extends StatelessWidget {
             child: Image.asset("assets/images/qr.png"),
           ),
         ),
-         Padding(
+        Padding(
             padding: EdgeInsets.only(bottom: 10),
-            child: Text("Barcode Scanning",
-                style: GoogleFonts.oswald(fontWeight: FontWeight.bold, fontSize: 30))
+            child: Text("பார்கோடு ஸ்கானிங்",
+                style: GoogleFonts.notoSansTamil(
+                    fontWeight: FontWeight.bold, fontSize: 30))),
+        Padding(
+          padding: EdgeInsets.only(top: 5, bottom: 2),
+          child: Text(
+              "பார்கோடுகளை ஒரு நொடியில் ஸ்கேன் செய்து வைத்துக் கொள்ளுங்கள்",
+              style: GoogleFonts.notoSansTamil(
+                  color: Colors.grey, fontWeight: FontWeight.bold)),
         ),
-         Padding(
-            padding: EdgeInsets.only(top: 5, bottom: 2),
-              child: Text("Scan barcodes in a snap and keep",
-                  style: GoogleFonts.mulish(color: Colors.grey, fontWeight: FontWeight.bold)
-              ),
-        ),
-         Padding(
+        Padding(
           padding: EdgeInsets.only(top: 1),
           child: Text("your inventory up to date with",
-              style: GoogleFonts.mulish(color: Colors.grey, fontWeight: FontWeight.bold)
-          ),
+              style: GoogleFonts.mulish(
+                  color: Colors.grey, fontWeight: FontWeight.bold)),
         ),
-         Padding(
+        Padding(
           padding: EdgeInsets.only(top: 1),
           child: Text("minimal effort",
-              style: GoogleFonts.mulish(color: Colors.grey, fontWeight: FontWeight.bold)
-          ),
+              style: GoogleFonts.mulish(
+                  color: Colors.grey, fontWeight: FontWeight.bold)),
         ),
       ],
     );

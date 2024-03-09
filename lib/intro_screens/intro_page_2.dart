@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class IntroPage2 extends StatelessWidget {
   const IntroPage2({super.key});
 
@@ -16,31 +15,32 @@ class IntroPage2 extends StatelessWidget {
           child: SizedBox(
             height: 160,
             width: 160,
-            child: Image.asset("assets/images/favpng_inventory-management-stock-taking-clip-art.png"),
+            child: Image.asset(
+                "assets/images/favpng_inventory-management-stock-taking-clip-art.png"),
           ),
         ),
-         Padding(
+        Padding(
             padding: EdgeInsets.only(bottom: 10),
-            child: Text("Stock Monitoring",
-                style: GoogleFonts.oswald(fontWeight: FontWeight.bold, fontSize: 30))
-        ),
-         Padding(
+            child: Text("பங்கு கண்காணிப்பு",
+                style: GoogleFonts.notoSansTamil(
+                    fontWeight: FontWeight.bold, fontSize: 30))),
+        Padding(
           padding: EdgeInsets.only(top: 5, bottom: 2),
           child: Text("Track inventory levels and",
-              style: GoogleFonts.mulish(color: Colors.grey, fontWeight: FontWeight.bold)
-          ),
+              style: GoogleFonts.mulish(
+                  color: Colors.grey, fontWeight: FontWeight.bold)),
         ),
-         Padding(
+        Padding(
           padding: EdgeInsets.only(top: 1),
           child: Text("get alerts when stock is",
-              style: GoogleFonts.mulish(color: Colors.grey, fontWeight: FontWeight.bold)
-          ),
+              style: GoogleFonts.mulish(
+                  color: Colors.grey, fontWeight: FontWeight.bold)),
         ),
-         Padding(
+        Padding(
           padding: EdgeInsets.only(top: 1),
           child: Text("low or high",
-              style: GoogleFonts.mulish(color: Colors.grey, fontWeight: FontWeight.bold)
-          ),
+              style: GoogleFonts.mulish(
+                  color: Colors.grey, fontWeight: FontWeight.bold)),
         ),
       ],
     );
