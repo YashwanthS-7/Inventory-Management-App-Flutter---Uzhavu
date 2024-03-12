@@ -1,1 +1,1 @@
-Inventory Management- Uzhavu
+Inventory Management - Uzhavu
